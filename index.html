@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hair room ひといき｜マンツーマンの小さな美容室</title>
+<meta name="description" content="最初から最後まで同じスタイリストが担当する、席がひとつだけの美容室。忙しい毎日のなかで、髪と気持ちをひと休みさせる時間をつくります。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F3F1F6;
+  --paper-2:#E9E5F0;
+  --ink:#24262C;
+  --ink-soft:#5A5C66;
+  --green:#2E5245;
+  --green-deep:#213C32;
+  --lilac:#B9A9D6;
+  --line:#D6D0E0;
+  --white:#FFFFFF;
+  --radius-lg:28px;
+  --radius-sm:10px;
+  --wrap:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Zen Kaku Gothic New",system-ui,sans-serif;
+  font-size:16px;line-height:1.9;letter-spacing:.03em;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;line-height:1.5;margin:0}
+h2{font-size:clamp(1.6rem,3.2vw,2.2rem);letter-spacing:.06em}
+p{margin:0}
+
+/* header */
+.site-header{position:absolute;inset:0 0 auto 0;z-index:5}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.15rem;text-decoration:none;letter-spacing:.08em}
+.logo small{display:block;font-size:.68rem;font-weight:500;color:var(--ink-soft);letter-spacing:.12em;line-height:1}
+.header-nav{display:flex;gap:28px;align-items:center;font-size:.92rem}
+.header-nav a{text-decoration:none}
+.header-nav a:hover{text-decoration:underline;text-underline-offset:6px}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 28px;border-radius:999px;
+  font-weight:700;text-decoration:none;font-size:1rem;letter-spacing:.06em;
+  transition:background-color .2s, color .2s;
+}
+.btn-primary{background:var(--green);color:var(--white)}
+.btn-primary:hover{background:var(--green-deep)}
+.btn-ghost{border:1.5px solid var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+.btn-small{min-height:42px;padding:0 20px;font-size:.9rem}
+
+/* hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;padding:110px 0 80px}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;width:100%}
+.hero-copy{position:relative;z-index:2;max-width:460px}
+.hero-lead{font-size:1.05rem;color:var(--ink-soft);margin-top:28px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:40px}
+.hero-meta{margin-top:28px;font-size:.88rem;color:var(--ink-soft)}
+.hero-title{
+  writing-mode:vertical-rl;
+  font-size:clamp(2.6rem,6vw,4.4rem);
+  letter-spacing:.18em;line-height:1.55;
+  position:relative;z-index:2;
+}
+.hero-title span{display:block;white-space:nowrap}
+.hero-title .indent{padding-top:2.2em}
+.strands{position:absolute;inset:0;z-index:1;pointer-events:none}
+.strands path{fill:none;stroke-linecap:round}
+.strands .s1{stroke:var(--lilac);stroke-width:2.2}
+.strands .s2{stroke:var(--green);stroke-width:1.4;opacity:.55}
+.strands .s3{stroke:var(--lilac);stroke-width:1.2;opacity:.7}
+.strands path{stroke-dasharray:1600;stroke-dashoffset:1600;animation:draw 3.2s cubic-bezier(.4,.1,.2,1) forwards}
+.strands .s2{animation-delay:.35s}
+.strands .s3{animation-delay:.7s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){
+  .strands path{animation:none;stroke-dashoffset:0}
+  html{scroll-behavior:auto}
+}
+
+/* sections */
+section{padding:110px 0}
+.section-head{max-width:620px;margin-bottom:56px}
+.section-head p{margin-top:18px;color:var(--ink-soft)}
+
+/* about */
+.about{background:var(--white);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:start}
+.about-statement{font-family:"Zen Maru Gothic",sans-serif;font-size:clamp(1.25rem,2.4vw,1.6rem);line-height:2;font-weight:500}
+.points{display:grid;gap:36px}
+.point h3{font-size:1.15rem;display:flex;align-items:center;gap:14px}
+.point h3::before{content:"";width:22px;height:2px;background:var(--green);flex:none}
+.point p{margin-top:8px;color:var(--ink-soft);padding-left:36px}
+
+/* menu */
+.menu{background:var(--white)}
+.menu-layout{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start}
+.price-list{border-top:1.5px solid var(--ink)}
+.price-row{display:grid;grid-template-columns:1fr auto;gap:8px 24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.price-row h3{font-size:1.08rem}
+.price-row .price{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.15rem;white-space:nowrap}
+.price-row .price small{font-size:.75rem;font-weight:500;color:var(--ink-soft);margin-left:2px}
+.price-row p{grid-column:1/-1;font-size:.9rem;color:var(--ink-soft)}
+.price-note{margin-top:20px;font-size:.85rem;color:var(--ink-soft)}
+.first-offer{
+  background:var(--green);color:var(--white);border-radius:var(--radius-lg);
+  padding:36px 32px;position:sticky;top:32px;
+}
+.first-offer h3{font-size:1.25rem}
+.first-offer p{margin-top:12px;opacity:.88;font-size:.95rem}
+.first-offer .offer-price{font-family:"Zen Maru Gothic",sans-serif;font-size:2.4rem;font-weight:700;margin-top:18px;line-height:1.2}
+.first-offer .offer-price s{font-size:1rem;opacity:.7;margin-right:10px;font-weight:500}
+.first-offer .btn{margin-top:24px;background:var(--white);color:var(--green-deep);width:100%}
+.first-offer .btn:hover{background:var(--paper-2)}
+
+/* stylist */
+.stylist{background:var(--paper)}
+.stylist-card{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:center}
+.portrait{
+  aspect-ratio:4/5;border-radius:140px 140px var(--radius-lg) var(--radius-lg);
+  background:linear-gradient(170deg,var(--lilac),#D9CFEA 55%,var(--paper-2));
+  position:relative;overflow:hidden;
+}
+.portrait svg{position:absolute;inset:auto 0 0 0;width:100%}
+.stylist-name{font-size:1.5rem}
+.stylist-name small{display:block;font-family:"Zen Kaku Gothic New",sans-serif;font-size:.85rem;font-weight:500;color:var(--ink-soft);letter-spacing:.08em}
+.stylist-text{margin-top:20px;color:var(--ink-soft);max-width:560px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;padding:0;list-style:none}
+.tags li{border:1px solid var(--ink-soft);border-radius:999px;padding:4px 16px;font-size:.85rem}
+
+/* voices */
+.voices{background:var(--paper)}
+.voice-list{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.voice{border-top:1.5px solid var(--ink);padding-top:24px}
+.voice blockquote{margin:0;font-size:.98rem}
+.voice figcaption{margin-top:16px;font-size:.85rem;color:var(--ink-soft)}
+
+/* flow */
+.flow{background:var(--white);border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.flow-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;counter-reset:step}
+.flow-list li{counter-increment:step;position:relative;padding-top:64px}
+.flow-list li::before{
+  content:counter(step);position:absolute;top:0;left:0;
+  width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--paper-2);color:var(--green-deep);
+  font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.1rem;
+}
+.flow-list li:not(:last-child)::after{
+  content:"";position:absolute;top:22px;left:56px;right:-12px;height:1px;background:var(--line);
+}
+.flow-list h3{font-size:1.05rem}
+.flow-list p{margin-top:8px;font-size:.92rem;color:var(--ink-soft)}
+
+/* faq */
+.faq{background:var(--white)}
+.faq-list{max-width:760px;border-top:1.5px solid var(--ink)}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item summary{
+  list-style:none;cursor:pointer;padding:22px 44px 22px 0;position:relative;
+  font-weight:700;
+}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{
+  content:"";position:absolute;right:8px;top:50%;width:12px;height:12px;
+  border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);
+  transform:translateY(-70%) rotate(45deg);transition:transform .25s;
+}
+.faq-item[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.faq-item .answer{padding:0 0 24px;color:var(--ink-soft)}
+
+/* access + cta */
+.access{background:var(--green);color:var(--white)}
+.access-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.access h2{color:var(--white)}
+.info{margin:32px 0 0;display:grid;grid-template-columns:auto 1fr;gap:14px 28px}
+.info dt{opacity:.75;font-size:.9rem}
+.info dd{margin:0}
+.map-box{
+  aspect-ratio:4/3;border-radius:var(--radius-lg);
+  background:var(--green-deep);position:relative;overflow:hidden;
+}
+.map-box svg{width:100%;height:100%}
+.reserve{margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.25);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.reserve p{font-family:"Zen Maru Gothic",sans-serif;font-size:1.3rem;font-weight:700}
+.reserve .btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn-light{background:var(--white);color:var(--green-deep)}
+.btn-light:hover{background:var(--paper-2)}
+.btn-outline-light{border:1.5px solid var(--white);color:var(--white)}
+.btn-outline-light:hover{background:var(--white);color:var(--green-deep)}
+
+footer{background:var(--green-deep);color:rgba(255,255,255,.75);padding:40px 0 120px;font-size:.82rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+.sample-note{color:var(--white);opacity:.9}
+
+/* mobile sticky reserve */
+.sticky-reserve{
+  display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:20;
+  gap:8px;padding:8px;border-radius:999px;background:rgba(255,255,255,.94);
+  box-shadow:0 6px 24px rgba(36,38,44,.18);backdrop-filter:blur(8px);
+}
+.sticky-reserve .btn{flex:1;min-height:46px;padding:0 12px;font-size:.92rem}
+
+@media (max-width:860px){
+  .header-nav a:not(.btn){display:none}
+  .hero .wrap{grid-template-columns:1fr;gap:8px}
+  .hero-title{order:-1;height:auto;max-height:none;writing-mode:horizontal-tb;letter-spacing:.08em;font-size:clamp(2rem,8vw,2.6rem);line-height:1.6}
+  .hero-title .indent{padding-top:0;padding-left:1em}
+  .hero-copy{max-width:none}
+  section{padding:80px 0}
+  .about-grid,.menu-layout,.access-grid{grid-template-columns:1fr;gap:48px}
+  .first-offer{position:static}
+  .stylist-card{grid-template-columns:1fr;gap:32px}
+  .portrait{max-width:240px}
+  .voice-list{grid-template-columns:1fr;gap:36px}
+  .flow-list{grid-template-columns:1fr 1fr;row-gap:40px}
+  .flow-list li::after{display:none}
+  .sticky-reserve{display:flex}
+}
+@media (max-width:480px){
+  .wrap{padding:0 16px}
+  .flow-list{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+  .info{grid-template-columns:1fr;gap:2px}
+  .info dd{margin-bottom:12px}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="#top" class="logo">ひといき<small>hair room</small></a>
+    <nav class="header-nav" aria-label="ページ内メニュー">
+      <a href="#menu">メニュー</a>
+      <a href="#stylist">スタイリスト</a>
+      <a href="#access">アクセス</a>
+      <a href="#reserve" class="btn btn-primary btn-small">予約する</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <svg class="strands" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="s1" d="M-40 640 C 260 520, 420 760, 720 600 S 1180 380, 1500 470"/>
+      <path class="s2" d="M-40 690 C 300 580, 460 800, 760 650 S 1200 440, 1500 520"/>
+      <path class="s3" d="M-40 740 C 320 640, 500 840, 800 700 S 1220 500, 1500 580"/>
+    </svg>
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="hero-lead">席はひとつ。最初から最後まで、同じスタイリストが担当します。ほかのお客さまと隣り合うことのない、静かな2時間をどうぞ。</p>
+        <div class="hero-actions">
+          <a href="#reserve" class="btn btn-primary">空き時間を見て予約する</a>
+          <a href="#menu" class="btn btn-ghost">メニューと料金</a>
+        </div>
+        <p class="hero-meta">駅から徒歩4分／10:00〜19:00／火曜定休</p>
+      </div>
+      <h1 class="hero-title" id="hero-title">
+        <span>髪も、こころも、</span>
+        <span class="indent">ひといき。</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div>
+        <h2 id="about-title">にぎやかなサロンが<br>ちょっと苦手な方へ</h2>
+        <p class="about-statement" style="margin-top:28px">話しかけられるのが疲れる日もあれば、髪の悩みをじっくり聞いてほしい日もあります。ひといきは、その日の気分に合わせて過ごせる小さな美容室です。</p>
+      </div>
+      <div class="points">
+        <div class="point">
+          <h3>担当は最後までひとり</h3>
+          <p>カウンセリングからシャンプー、仕上げまで同じスタイリストが担当します。途中で人が入れ替わることはありません。</p>
+        </div>
+        <div class="point">
+          <h3>会話は少なめでも大丈夫</h3>
+          <p>予約のときに「静かに過ごしたい」を選べます。必要なことだけ確認して、あとはゆっくりお休みください。</p>
+        </div>
+        <div class="point">
+          <h3>白髪やくせ毛の相談から</h3>
+          <p>白髪をぼかしたい、うねりを落ち着かせたいなど、悩みから一緒にメニューを決めます。無理なおすすめはしません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="wrap menu-layout">
+      <div>
+        <div class="section-head" style="margin-bottom:32px">
+          <h2 id="menu-title">メニューと料金</h2>
+          <p>すべてシャンプー・ブロー込みの税込価格です。ロングの方も追加料金はかかりません。</p>
+        </div>
+        <aside class="first-offer" aria-label="はじめての方の特典">
+          <h3>はじめての方は<br>カット＋カラーがお得です</h3>
+          <p>初回は時間を長めにとって、これまでの髪の履歴や毎日のお手入れまでうかがいます。</p>
+          <p class="offer-price"><s>¥13,200</s>¥9,900</p>
+          <a href="#reserve" class="btn">初回料金で予約する</a>
+        </aside>
+      </div>
+      <div>
+        <div class="price-list">
+          <div class="price-row">
+            <h3>カット</h3><span class="price">¥5,500</span>
+            <p>骨格とくせを見て、家で乾かすだけでまとまる形に整えます。</p>
+          </div>
+          <div class="price-row">
+            <h3>カット＋カラー</h3><span class="price">¥13,200</span>
+            <p>ツヤを残しやすい薬剤を使用。明るさや色味は相談しながら決めます。</p>
+          </div>
+          <div class="price-row">
+            <h3>白髪ぼかしハイライト</h3><span class="price">¥16,500</span>
+            <p>白髪を染めきらず、細いハイライトで目立ちにくくします。伸びてきても境目が気になりにくい方法です。</p>
+          </div>
+          <div class="price-row">
+            <h3>カット＋髪質改善トリートメント</h3><span class="price">¥14,300</span>
+            <p>広がりやうねりを内側から落ち着かせます。効果の目安は1〜2ヶ月です。</p>
+          </div>
+          <div class="price-row">
+            <h3>前髪カット</h3><span class="price">¥1,100<small>（10分）</small></span>
+            <p>前回のご来店から2ヶ月以内の方限定です。</p>
+          </div>
+        </div>
+        <p class="price-note">髪の長さや量によってお時間が前後します。当日の追加メニューも承ります。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="stylist" id="stylist" aria-labelledby="stylist-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="stylist-title">担当するスタイリスト</h2>
+      </div>
+      <div class="stylist-card">
+        <div class="portrait" role="img" aria-label="スタイリストのイメージイラスト">
+          <svg viewBox="0 0 280 350" aria-hidden="true">
+            <ellipse cx="140" cy="150" rx="62" ry="70" fill="#2E5245" opacity=".85"/>
+            <ellipse cx="140" cy="165" rx="44" ry="52" fill="#EAD9CC"/>
+            <path d="M78 150 C 80 90, 200 90, 202 150 C 190 120, 100 115, 78 150 Z" fill="#2E5245"/>
+            <path d="M50 350 C 60 260, 220 260, 230 350 Z" fill="#F3F1F6"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="stylist-name"><small>オーナースタイリスト</small>森川 ゆい</h3>
+          <p class="stylist-text">都内のサロンで12年勤めたあと、ひとりのお客さまにきちんと向き合える場所をつくりたくて、ひといきを開きました。得意なのは、毎朝の手間を減らすカットと、白髪を目立たなくするカラーです。</p>
+          <ul class="tags">
+            <li>くせ毛を活かすカット</li>
+            <li>白髪ぼかし</li>
+            <li>ショート・ボブ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="voices" aria-labelledby="voices-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="voices-title">通ってくださる方の声</h2>
+      </div>
+      <div class="voice-list">
+        <figure class="voice" style="margin:0">
+          <blockquote>「話さなくていい」を選べるのが本当にありがたいです。仕事帰りに寄って、ほぼ寝ていました。</blockquote>
+          <figcaption>40代・会社員の方</figcaption>
+        </figure>
+        <figure class="voice" style="margin:0">
+          <blockquote>くせ毛をずっと縮毛矯正で伸ばしていましたが、カットだけでまとまるようになって驚きました。</blockquote>
+          <figcaption>30代・子育て中の方</figcaption>
+        </figure>
+        <figure class="voice" style="margin:0">
+          <blockquote>白髪染めの間隔が3週間から2ヶ月に。境目を気にしなくなって気持ちが楽です。</blockquote>
+          <figcaption>50代・パートタイム勤務の方</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="flow" aria-labelledby="flow-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="flow-title">はじめての方へ</h2>
+        <p>ご予約からお帰りまでの流れです。わからないことは予約のときにお気軽にお聞きください。</p>
+      </div>
+      <ol class="flow-list">
+        <li><h3>Webかお電話で予約</h3><p>希望の日時と、過ごし方（会話少なめ／相談したい）を選びます。</p></li>
+        <li><h3>カウンセリング</h3><p>髪の悩みや毎朝のお手入れをうかがって、メニューと料金を確認します。</p></li>
+        <li><h3>施術</h3><p>担当は最後まで同じスタイリストです。途中でお好きな飲み物をお出しします。</p></li>
+        <li><h3>おうちでのケア</h3><p>乾かし方のコツと、次に来ると良いタイミングをお伝えします。</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="faq-title">よくある質問</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>子ども連れでも大丈夫ですか？</summary>
+          <p class="answer">はい。貸し切りの空間なので、ベビーカーのまま入っていただけます。お子さまが過ごせる小さなマットもご用意しています。</p>
+        </details>
+        <details class="faq-item">
+          <summary>予約の変更やキャンセルはできますか？</summary>
+          <p class="answer">前日までならWebから無料で変更できます。当日の場合はお電話でご連絡ください。</p>
+        </details>
+        <details class="faq-item">
+          <summary>支払い方法を教えてください</summary>
+          <p class="answer">現金、クレジットカード、主要な電子マネーとQRコード決済がご利用いただけます。</p>
+        </details>
+        <details class="faq-item">
+          <summary>駐車場はありますか？</summary>
+          <p class="answer">専用の駐車場はありません。お店の向かいにコインパーキングがあります。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="access" id="access" aria-labelledby="access-title">
+    <div class="wrap">
+      <div class="access-grid">
+        <div>
+          <h2 id="access-title">お店の場所</h2>
+          <dl class="info">
+            <dt>住所</dt><dd>〇〇県〇〇市△△町1-2-3 ひだまりビル1階</dd>
+            <dt>アクセス</dt><dd>〇〇駅 東口から徒歩4分</dd>
+            <dt>営業時間</dt><dd>10:00〜19:00（最終受付 17:00）</dd>
+            <dt>定休日</dt><dd>毎週火曜日、第3水曜日</dd>
+            <dt>電話</dt><dd>000-0000-0000</dd>
+          </dl>
+        </div>
+        <div class="map-box" role="img" aria-label="駅からお店までの簡単な地図">
+          <svg viewBox="0 0 400 300" aria-hidden="true">
+            <g stroke="rgba(255,255,255,.18)" stroke-width="10" fill="none">
+              <path d="M0 210 H400"/><path d="M120 0 V300"/><path d="M290 0 V300"/>
+            </g>
+            <path d="M0 70 H400" stroke="rgba(255,255,255,.45)" stroke-width="4" stroke-dasharray="14 10"/>
+            <rect x="96" y="54" width="48" height="32" rx="6" fill="#F3F1F6"/>
+            <text x="120" y="75" text-anchor="middle" font-size="12" fill="#213C32" font-family="sans-serif">駅</text>
+            <path d="M120 86 V210 H290" stroke="#B9A9D6" stroke-width="3" fill="none" stroke-dasharray="2 8" stroke-linecap="round"/>
+            <circle cx="290" cy="210" r="14" fill="#B9A9D6"/>
+            <circle cx="290" cy="210" r="5" fill="#213C32"/>
+            <text x="290" y="248" text-anchor="middle" font-size="13" fill="#FFFFFF" font-family="sans-serif">ひといき</text>
+          </svg>
+        </div>
+      </div>
+      <div class="reserve" id="reserve">
+        <p>空いている日時はWebで確認できます</p>
+        <div class="btns">
+          <a href="#" class="btn btn-light">Webで予約する</a>
+          <a href="#" class="btn btn-outline-light">LINEで相談する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© hair room ひといき</span>
+    <span class="sample-note">このページは制作サンプルです。店舗名・人物・住所・お客さまの声はすべて架空のものです。</span>
+  </div>
+</footer>
+
+<div class="sticky-reserve" aria-label="予約">
+  <a href="#reserve" class="btn btn-primary">Web予約</a>
+  <a href="#" class="btn btn-ghost">電話する</a>
+</div>
+
+</body>
+</html>
